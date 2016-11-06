@@ -12,7 +12,6 @@ import Client.Config;
 import Client.Resources;
 import models.*;
 
-import ui.medical.TreatmentsInvoiceUI;
 
 
 import java.awt.event.ActionListener;
@@ -110,22 +109,11 @@ public class ClientUI {
 
 	private void setPermissions() {
 		disableAllButtons();
-		if (Application.user.getClass() == Doctor.class) {
-			btnMedicalRecords.setEnabled(true);
-			btnAppointments.setEnabled(true);
-		} else if (Application.user.getClass() == Labratorian.class) {
-			btnExaminations.setEnabled(true);
-			btnResults.setEnabled(true);
-		} else if (Application.user.getClass() == Secretary.class) {
+		
+		  if (Application.user.getClass() == Secretary.class) {
 			btnCreateInvoice.setEnabled(true);
 			btnConformation.setEnabled(true);
-		} else if (Application.user.getClass() == Manager.class) {
-			btnWeeklyReport.setEnabled(true);
-			btnMonthlyReport.setEnabled(true);
-			btnUsers.setEnabled(true);
-		} else if (Application.user.getClass() == Dispatcher.class) {
-			btnAppointments.setEnabled(true);
-		}
+		} 
 
 	}
 
@@ -142,10 +130,8 @@ public class ClientUI {
 		frmGhealth.getContentPane().setLayout(null);
 		btnMedicalRecords.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (Application.user.getClass().equals(Doctor.class)) {
-				//	Identification p = new Identification();
-					//p.getFrame().setVisible(true);
-				}
+				
+				
 			}
 		});
 
@@ -183,13 +169,10 @@ public class ClientUI {
 		frmGhealth.getContentPane().add(btnMedicalRecords);
 		btnAppointments.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (Application.user.getClass().equals(Doctor.class)) {
-					//new DoctorAppointments((Doctor) Application.user);
-					return;
+				
 				}
 
-				//new Identification().getFrame().setVisible(true);
-			}
+			
 		});
 		btnAppointments.setToolTipText("Laboratiries Managment form");
 		btnAppointments.setBounds(342, 159, 171, 68);
@@ -275,7 +258,7 @@ public class ClientUI {
 		frmGhealth.getContentPane().add(btnConformation);
 		btnCreateInvoice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new TreatmentsInvoiceUI();
+				
 			}
 		});
 		btnCreateInvoice.setIcon(new ImageIcon(ClientUI.class.getResource("/img/info.png")));

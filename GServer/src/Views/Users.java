@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import models.Dispatcher;
-import models.Doctor;
-import models.Labratorian;
-import models.Manager;
 import models.Secretary;
 import models.User;
 import Database.DbHandler;
@@ -50,21 +46,9 @@ public class Users extends View {
 	 */
 	private User getUserById(String id) throws SQLException {
 		DbHandler db = Config.getConfig().getHandler();
-		Doctor d = db.doctors.queryForId(id);
-		if (d != null)
-			return d;
-		Labratorian l = db.labratorians.queryForId(id);
-		if (l != null)
-			return l;
 		Secretary s = db.secretaries.queryForId(id);
 		if (s != null)
 			return s;
-		Dispatcher dis = db.dispatchers.queryForId(id);
-		if (dis != null)
-			return dis;
-		Manager man = db.managers.queryForId(id);
-		if (man != null)
-			return man;
 		return null;
 	}
 
@@ -95,10 +79,6 @@ public class Users extends View {
 		values.put("isLocked", 1);
 
 		List<User> users = new ArrayList<User>();
-		List<Doctor> doctors = db.doctors.queryForFieldValues(values);
-		List<Labratorian> labratorians = db.labratorians.queryForFieldValues(values);
-		users.addAll(doctors);
-		users.addAll(labratorians);
 		return users;
 	}
 
@@ -128,20 +108,8 @@ public class Users extends View {
 		DbHandler db = Config.getConfig().getHandler();
 		String cls = user.getClass().getTypeName();
 		switch (cls) {
-		case "models.Doctor":
-			db.doctors.update((Doctor) user);
-			break;
-		case "models.Labratorian":
-			db.labratorians.update((Labratorian) user);
-			break;
-		case "models.Dispatcher":
-			db.dispatchers.update((Dispatcher) user);
-			break;
 		case "models.Secretary":
 			db.secretaries.update((Secretary) user);
-			break;
-		case "models.Manager":
-			db.managers.update((Manager) user);
 			break;
 		}
 	}

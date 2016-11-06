@@ -19,7 +19,7 @@ import Database.DbHandler;
 import Utils.DateTime;
 import Utils.Logger;
 import Utils.Request;
-import Utils.TimeTask;
+
 
 import Views.Users;
 
@@ -133,9 +133,7 @@ public class Server extends AbstractServer {
 
 		Server server = new Server(cfg.getPort());
 
-		Timer timer = new Timer();
-		timer.schedule(new TimeTask(), DateTime.getTime(0, 0), (24 * 60 * 60 * 1000));
-
+		
 		server.listen();
 	}
 }
