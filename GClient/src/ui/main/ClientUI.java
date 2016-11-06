@@ -11,12 +11,9 @@ import Client.Application;
 import Client.Config;
 import Client.Resources;
 import models.*;
-import ui.appointments.DoctorAppointments;
-import ui.labratories.Labratory;
-import ui.labratories.LabratoryArchive;
+
 import ui.medical.TreatmentsInvoiceUI;
-import ui.reports.MonthlyReport;
-import ui.reports.WeeklyReport;
+
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -103,7 +100,7 @@ public class ClientUI {
 		btnExaminations.setEnabled(false);
 		btnResults.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new LabratoryArchive();
+				//new LabratoryArchive();
 			}
 		});
 		btnResults.setEnabled(false);
@@ -146,8 +143,8 @@ public class ClientUI {
 		btnMedicalRecords.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (Application.user.getClass().equals(Doctor.class)) {
-					Identification p = new Identification();
-					p.getFrame().setVisible(true);
+				//	Identification p = new Identification();
+					//p.getFrame().setVisible(true);
 				}
 			}
 		});
@@ -161,7 +158,7 @@ public class ClientUI {
 		btnMedicalRecords.setBorder(null);
 		btnExaminations.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Labratory();
+				//new Labratory();
 			}
 		});
 
@@ -187,11 +184,11 @@ public class ClientUI {
 		btnAppointments.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Application.user.getClass().equals(Doctor.class)) {
-					new DoctorAppointments((Doctor) Application.user);
+					//new DoctorAppointments((Doctor) Application.user);
 					return;
 				}
 
-				new Identification().getFrame().setVisible(true);
+				//new Identification().getFrame().setVisible(true);
 			}
 		});
 		btnAppointments.setToolTipText("Laboratiries Managment form");
@@ -224,8 +221,8 @@ public class ClientUI {
 		btnWeeklyReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				WeeklyReport report = new WeeklyReport();
-				report.getFrame().setVisible(true);
+				//WeeklyReport report = new WeeklyReport();
+			///	report.getFrame().setVisible(true);
 
 			}
 		});
@@ -239,9 +236,9 @@ public class ClientUI {
 		btnMonthlyReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				MonthlyReport mReport = new MonthlyReport();
+			//	MonthlyReport mReport = new MonthlyReport();
 
-				mReport.getFrame().setVisible(true);
+			//	mReport.getFrame().setVisible(true);
 			}
 		});
 
@@ -265,8 +262,7 @@ public class ClientUI {
 		frmGhealth.getContentPane().add(lblNewLabel_1);
 		btnConformation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Identification();
-
+				
 			}
 		});
 		btnConformation.setIcon(new ImageIcon(ClientUI.class.getResource("/img/treatment.png")));

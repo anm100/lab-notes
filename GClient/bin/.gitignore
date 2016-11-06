@@ -1,12 +1,3 @@
-/Client/
-/img/
 /Controllers/
-/FitResults/
-/FitTests/
-/Fixtures/
-/org/
-/ui/
-/AllTests.class
-/LoginTests.class
-/MedicalRecordTest.class
 /net/
+/ui/

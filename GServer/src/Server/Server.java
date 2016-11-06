@@ -20,15 +20,11 @@ import Utils.DateTime;
 import Utils.Logger;
 import Utils.Request;
 import Utils.TimeTask;
-import Views.Appointments;
-import Views.Reports;
+
 import Views.Users;
-import models.Appointment;
-import models.Labratorian;
-import models.Patient;
+
 import models.Person;
-import models.Statistic;
-import models.Visit;
+
 import ocsf.server.*;
 /**
  * Server class extends AbstractServer
