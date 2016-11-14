@@ -30,11 +30,6 @@ public abstract class Person extends Entity{
 	@DatabaseField()
 	private String firstName;
 	
-	/**
-	 * The person birthDate
-	 */
-	@DatabaseField()
-	private Date birthDate;
 	
 	/**
 	 * The person email 
@@ -116,21 +111,6 @@ public abstract class Person extends Entity{
 		this.firstName = firstName;
 	}
 	
-	/**
-	 * 
-	 * @return the person  birthDate
-	 */
-	public Date getBirthDate() {
-		return birthDate;
-	}
-	
-	/**
-	 * Sets this person's birthdate from the given value 
-	 * @param date
-	 */
-	public void setBirthDate(Date date) {
-		this.birthDate =  date;
-	}
 	/**
 	 * 
 	 * @return the person email 

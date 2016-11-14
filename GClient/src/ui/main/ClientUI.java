@@ -32,25 +32,23 @@ import javax.swing.ImageIcon;
 public class ClientUI {
 
 	private JFrame frmGhealth;
-	private final JButton btnMedicalRecords = new JButton("Medical Records");
-	private final JButton btnAppointments = new JButton("Appointments");
 	private final JButton btnUsers = new JButton("Users");
 	private final JButton btnWeeklyReport = new JButton("Weekly reports");
 	private final JLabel lblNewLabel = new JLabel("GHealth System");
 	private final JLabel lblNewLabel_1 = new JLabel("");
-	private final JButton btnMonthlyReport = new JButton("Monthly reports");
+	private final JButton btnMonthlyReport = new JButton("\u05DE\u05E2\u05D1\u05D3\u05D5\u05EA ");
 	private final JButton btnConformation = new JButton("Conformation");
-	private final JButton btnCreateInvoice = new JButton("Create Invoice");
+	private final JButton btnCreateInvoice = new JButton("\u05D4\u05D5\u05E1\u05E4\u05EA \u05D4\u05E2\u05E8\u05D5\u05EA ");
 	private final JLabel lblNewLabel_3 = new JLabel("Connected to server : ");
-	private final JButton btnExaminations = new JButton("Examinations");
-	private final JButton btnResults = new JButton("Results");
-	private final JLabel lblMedical = new JLabel("Medical and patients");
-	private final JLabel lblLabratoriesAndTests = new JLabel("Labratories and examinations");
-	private final JLabel lblManagmentAndReports = new JLabel("Managment and reports");
+	private final JButton btnExaminations = new JButton("\u05D4\u05D5\u05E1\u05E4\u05EA \u05DE\u05E2\u05D1\u05D3\u05D4 ");
+	private final JButton btnResults = new JButton("\u05D4\u05D5\u05E1\u05E4\u05EA \u05EA\u05DB\u05E0\u05D0\u05D9");
+	private final JLabel lblMedical = new JLabel("\u05DE\u05E2\u05D1\u05D3\u05D5\u05EA");
+	private final JLabel label = new JLabel("\u05D4\u05E2\u05E8\u05D5\u05EA");
+	private final JButton button = new JButton("\u05D4\u05D5\u05E1\u05E4\u05EA \u05D4\u05E2\u05E8\u05D5\u05EA ");
 
 	public ClientUI() {
 		initialize();
-		frmGhealth.setSize(601, 684);
+		frmGhealth.setSize(656, 684);
 		frmGhealth.setVisible(true);
 		frmGhealth.setLocationRelativeTo(null);
 		lblNewLabel_1.setBounds(331, 21, 279, 44);
@@ -74,19 +72,28 @@ public class ClientUI {
 		frmGhealth.getContentPane().add(panel);
 		lblMedical.setForeground(new Color(0, 191, 255));
 		lblMedical.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblMedical.setBounds(37, 107, 203, 35);
+		lblMedical.setBounds(530, 111, 98, 35);
 
 		frmGhealth.getContentPane().add(lblMedical);
-		lblLabratoriesAndTests.setForeground(new Color(0, 191, 255));
-		lblLabratoriesAndTests.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblLabratoriesAndTests.setBounds(37, 230, 274, 35);
-
-		frmGhealth.getContentPane().add(lblLabratoriesAndTests);
-		lblManagmentAndReports.setForeground(new Color(0, 191, 255));
-		lblManagmentAndReports.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblManagmentAndReports.setBounds(27, 360, 276, 22);
-
-		frmGhealth.getContentPane().add(lblManagmentAndReports);
+		label.setForeground(new Color(0, 191, 255));
+		label.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		label.setBounds(542, 228, 98, 35);
+		
+		frmGhealth.getContentPane().add(label);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button.setIcon(new ImageIcon(ClientUI.class.getResource("/img/info.png")));
+		button.setHorizontalAlignment(SwingConstants.LEFT);
+		button.setForeground(Color.BLACK);
+		button.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		button.setEnabled(false);
+		button.setBorder(null);
+		button.setBackground(Color.WHITE);
+		button.setBounds(429, 293, 181, 53);
+		
+		frmGhealth.getContentPane().add(button);
 		setPermissions();
 	}
 
@@ -103,8 +110,6 @@ public class ClientUI {
 			}
 		});
 		btnResults.setEnabled(false);
-		btnMedicalRecords.setEnabled(false);
-		btnAppointments.setEnabled(false);
 	}
 
 	private void setPermissions() {
@@ -128,20 +133,6 @@ public class ClientUI {
 		frmGhealth.setBackground(Color.WHITE);
 		frmGhealth.getContentPane().setBackground(Color.WHITE);
 		frmGhealth.getContentPane().setLayout(null);
-		btnMedicalRecords.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-			}
-		});
-
-		btnMedicalRecords.setBounds(95, 157, 191, 68);
-		btnMedicalRecords.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnMedicalRecords.setBackground(Color.WHITE);
-		btnMedicalRecords.setHorizontalAlignment(SwingConstants.LEFT);
-		btnMedicalRecords.setForeground(Color.BLACK);
-		btnMedicalRecords.setIcon(Resources.getIcon("doctors.png"));
-		btnMedicalRecords.setBorder(null);
 		btnExaminations.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//new Labratory();
@@ -153,7 +144,7 @@ public class ClientUI {
 		btnExaminations.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnExaminations.setBorder(null);
 		btnExaminations.setBackground(Color.WHITE);
-		btnExaminations.setBounds(95, 289, 191, 68);
+		btnExaminations.setBounds(210, 157, 191, 53);
 		btnExaminations.setIcon(Resources.getIcon("lab.png"));
 		frmGhealth.getContentPane().add(btnExaminations);
 
@@ -162,28 +153,9 @@ public class ClientUI {
 		btnResults.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnResults.setBorder(null);
 		btnResults.setBackground(Color.WHITE);
-		btnResults.setBounds(342, 285, 181, 68);
+		btnResults.setBounds(20, 157, 165, 53);
 		btnResults.setIcon(Resources.getIcon("treatment.png"));
 		frmGhealth.getContentPane().add(btnResults);
-
-		frmGhealth.getContentPane().add(btnMedicalRecords);
-		btnAppointments.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				}
-
-			
-		});
-		btnAppointments.setToolTipText("Laboratiries Managment form");
-		btnAppointments.setBounds(342, 159, 171, 68);
-		btnAppointments.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAppointments.setHorizontalAlignment(SwingConstants.LEFT);
-		btnAppointments.setForeground(Color.BLACK);
-		btnAppointments.setBackground(Color.WHITE);
-		btnAppointments.setIcon(Resources.getIcon("appoitment.png"));
-		btnAppointments.setBorder(null);
-
-		frmGhealth.getContentPane().add(btnAppointments);
 		btnUsers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new UsersManagingUI();
@@ -230,7 +202,7 @@ public class ClientUI {
 		btnMonthlyReport.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnMonthlyReport.setBorder(null);
 		btnMonthlyReport.setBackground(Color.WHITE);
-		btnMonthlyReport.setBounds(335, 393, 181, 68);
+		btnMonthlyReport.setBounds(429, 157, 181, 53);
 		btnMonthlyReport.setIcon(Resources.getIcon("tests.png"));
 
 		frmGhealth.getContentPane().add(btnMonthlyReport);
@@ -267,7 +239,7 @@ public class ClientUI {
 		btnCreateInvoice.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCreateInvoice.setBorder(null);
 		btnCreateInvoice.setBackground(Color.WHITE);
-		btnCreateInvoice.setBounds(335, 479, 181, 68);
+		btnCreateInvoice.setBounds(220, 293, 181, 53);
 		frmGhealth.getContentPane().add(btnCreateInvoice);
 
 	}
