@@ -21,13 +21,17 @@ import ui.utils.UITests;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 import java.awt.Component;
+
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Dialog.ModalExclusionType;
+
 import javax.swing.SwingConstants;
+import javax.swing.text.IconView;
+
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
@@ -44,7 +48,7 @@ public class SignInUI {
 	private JPasswordField passwordField;
 	private JTextField textField;
 	private int attempts = 0;
-	private JButton btnLogIn = new JButton("Sign in ");
+	private JButton btnLogIn = new JButton("Sign in");
 	private JLabel labelDetails;
 
 	JButton btnConnected;
@@ -79,9 +83,9 @@ public class SignInUI {
 			}
 		});
 		SignInUI.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
-		SignInUI.setTitle("Sign In - GHealth");
+		SignInUI.setTitle("Sign In");
 		SignInUI.setResizable(false);
-		Image icon = new ImageIcon(this.getClass().getResource("/img/" + "icon.png")).getImage();
+		Image icon = new ImageIcon(this.getClass().getResource("/img/" + "icon.PNG")).getImage();
 		SignInUI.setIconImage(icon);
 		SignInUI.setForeground(Color.BLACK);
 		SignInUI.setFont(new Font("Dialog", Font.PLAIN, 16));
@@ -103,45 +107,43 @@ public class SignInUI {
 		btnConnected.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnConnected.setBorder(null);
 		btnConnected.setBackground(Color.WHITE);
-		btnConnected.setBounds(0, 214, 311, 35);
+		btnConnected.setBounds(0, 350, 668, 35);
 		SignInUI.getContentPane().add(btnConnected);
-
-		JLabel logo = new JLabel("GHealth");
-		logo.setBounds(0, 14, 311, 50);
+		
+		JLabel logo = new JLabel ("Ghealth");
+		logo.setBounds(148, 22, 311, 50);
 		logo.setForeground(new Color(0, 0, 0));
 		logo.setFont(new Font("Microsoft New Tai Lue", Font.BOLD, 17));
 		logo.setBackground(Color.WHITE);
-		logo.setIcon(Resources.getIcon("logo.png"));
 		SignInUI.getContentPane().add(logo);
 
 		JLabel lblNewLabel = new JLabel("ID:");
-		lblNewLabel.setBounds(20, 100, 46, 14);
+		lblNewLabel.setBounds(166, 100, 46, 14);
 		SignInUI.getContentPane().add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Password:");
-		lblNewLabel_1.setBounds(20, 132, 76, 14);
+		lblNewLabel_1.setBounds(136, 132, 76, 14);
 		SignInUI.getContentPane().add(lblNewLabel_1);
 
 		passwordField = new JPasswordField();
 
-		passwordField.setBounds(85, 129, 200, 25);
+		passwordField.setBounds(212, 127, 200, 25);
 		SignInUI.getContentPane().add(passwordField);
 
 		textField = new JTextField();
-		textField.setBounds(85, 96, 200, 25);
+		textField.setBounds(212, 95, 200, 25);
 		SignInUI.getContentPane().add(textField);
 		textField.setColumns(10);
 
 		labelDetails = new JLabel("Please enter user Id and Password");
 		labelDetails.setForeground(Color.RED);
-		labelDetails.setBounds(86, 155, 271, 14);
+		labelDetails.setBounds(225, 155, 271, 14);
 		SignInUI.getContentPane().add(labelDetails);
 		labelDetails.setVisible(false);
-		SignInUI.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[] { logo }));
-		SignInUI.setBounds(100, 100, 344, 282);
+		SignInUI.setBounds(100, 100, 708, 414);
 		SignInUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		btnLogIn.setBounds(85, 180, 200, 23);
+		btnLogIn.setBounds(212, 177, 200, 23);
 		SignInUI.getContentPane().add(btnLogIn);
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
