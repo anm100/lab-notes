@@ -46,7 +46,7 @@ public class SignInUI {
 
 	private JFrame SignInUI;
 	private JPasswordField passwordField;
-	private JTextField textField;
+	private JTextField idtextField;
 	private int attempts = 0;
 	private JButton btnLogIn = new JButton("Sign in");
 	private JLabel labelDetails;
@@ -85,7 +85,7 @@ public class SignInUI {
 		SignInUI.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 		SignInUI.setTitle("Sign In");
 		SignInUI.setResizable(false);
-		Image icon = new ImageIcon(this.getClass().getResource("/img/" + "icon.PNG")).getImage();
+		Image icon = new ImageIcon(this.getClass().getResource("/img/" + "icon.png")).getImage();
 		SignInUI.setIconImage(icon);
 		SignInUI.setForeground(Color.BLACK);
 		SignInUI.setFont(new Font("Dialog", Font.PLAIN, 16));
@@ -110,11 +110,13 @@ public class SignInUI {
 		btnConnected.setBounds(0, 350, 668, 35);
 		SignInUI.getContentPane().add(btnConnected);
 		
-		JLabel logo = new JLabel ("Ghealth");
-		logo.setBounds(148, 22, 311, 50);
+		JLabel logo = new JLabel ("\u0639\u064A\u0627\u062F\u0629 \u0627\u0644\u062F\u0643\u062A\u0648\u0631 \u0647\u064A\u062B\u0645 \u0627\u0644\u0634\u064A\u062E \u062E\u0644\u064A\u0644\r\n");
+		logo.setVerticalAlignment(SwingConstants.BOTTOM);
+		logo.setBounds(198, 13, 437, 76);
 		logo.setForeground(new Color(0, 0, 0));
-		logo.setFont(new Font("Microsoft New Tai Lue", Font.BOLD, 17));
+		logo.setFont(new Font("Arial", Font.BOLD, 17));
 		logo.setBackground(Color.WHITE);
+		logo.setIcon(Resources.getIcon("pic.png"));
 		SignInUI.getContentPane().add(logo);
 
 		JLabel lblNewLabel = new JLabel("ID:");
@@ -130,10 +132,10 @@ public class SignInUI {
 		passwordField.setBounds(212, 127, 200, 25);
 		SignInUI.getContentPane().add(passwordField);
 
-		textField = new JTextField();
-		textField.setBounds(212, 95, 200, 25);
-		SignInUI.getContentPane().add(textField);
-		textField.setColumns(10);
+		idtextField = new JTextField();
+		idtextField.setBounds(212, 95, 200, 25);
+		SignInUI.getContentPane().add(idtextField);
+		idtextField.setColumns(10);
 
 		labelDetails = new JLabel("Please enter user Id and Password");
 		labelDetails.setForeground(Color.RED);
@@ -165,29 +167,23 @@ public class SignInUI {
 
 		String pass = new String(passwordField.getPassword());
 
-		if (UITests.notEmpty(textField.getText()) == false && UITests.notEmpty(pass) == false) {
+		if (UITests.notEmpty(idtextField.getText()) == false && UITests.notEmpty(pass) == false) {
 			labelDetails.setText("*Please enter ID and password");
 			return;
-		} else if (UITests.notEmpty(textField.getText()) == false) {
+		} else if (UITests.notEmpty(idtextField.getText()) == false) {
 			labelDetails.setText("*Please enter an ID");
 			return;
 		} else if (UITests.notEmpty(pass) == false) {
 			labelDetails.setText("*Please enter a password");
 			return;
-		} else if (UITests.correctId(textField.getText()) == false) {
+		} else if (UITests.correctId(idtextField.getText()) == false) {
 			labelDetails.setText("*Please enter 9 digits ID");
 			return;
 		}
 
-		User u = UsersController.getUser(textField.getText());
+		User u = UsersController.getUser(idtextField.getText());
 		if (u == null) {
 			labelDetails.setText("*User does not exist");
-			return;
-		}
-		if (u.isLocked()) {
-			labelDetails.setText("*Your account is locked, contact admin");
-			btnLogIn.setEnabled(false);
-			passwordField.setEnabled(false);
 			return;
 		}
 		if (!UsersController.authinticateUser(u, pass)) {

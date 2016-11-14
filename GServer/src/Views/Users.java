@@ -46,11 +46,12 @@ public class Users extends View {
 	 */
 	private User getUserById(String id) throws SQLException {
 		DbHandler db = Config.getConfig().getHandler();
-		Secretary s = db.secretaries.queryForId(id);
+		User s = db.users.queryForId(id);
 		if (s != null)
 			return s;
 		return null;
 	}
+	
 
 	/**
 	 * gets the online users and returns an ArrayList of them

@@ -1,5 +1,7 @@
 package Database;
 
+import java.sql.SQLException;
+
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
@@ -21,6 +23,8 @@ public class DbHandler {
 
 	
 	public Dao<Secretary, String> secretaries;
+	public Dao<User, String> users;
+
 	
 	/**
 	 * need to provide url , user ,pass to conenct to database
@@ -33,10 +37,17 @@ public class DbHandler {
 		try {
 			connection = new JdbcConnectionSource(url, username, password);
 			initializeDao();
+			createTable(); 
 			fillDataBase();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	private void createTable() throws SQLException {
+		// TODO Auto-generated method stub
+		//TableUtils.createTable(connection, User.class);
+		
 	}
 
 	/**
@@ -45,6 +56,7 @@ public class DbHandler {
 	 * @throws Exception
 	 */
 	public void fillDataBase() throws Exception {
+		DataFiller df = new DataFiller(this);
 		
 	}
 
@@ -56,7 +68,8 @@ public class DbHandler {
 	public void initializeDao() throws Exception {
 		
 		secretaries = DaoManager.createDao(connection, Secretary.class);
-		
+		users = DaoManager.createDao(connection, User.class);
+
 	}
 
 	/**

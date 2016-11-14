@@ -19,9 +19,9 @@ public class Config {
 	}
 
 	private int port = 5000;
-	private String dbUrl = "jdbc:mysql://localhost/test";
+	private String dbUrl = "jdbc:mysql://localhost/waqet1";
 	private String dbUser = "root";
-	private String dbPassword = "";
+	private String dbPassword = "12345";
 	private Logger logger = new Logger(isDebug);
 	private String homeDirectory = "c:/GHealth";
 	private FileManager fileManager = new FileManager(homeDirectory);
@@ -43,16 +43,16 @@ public class Config {
 		if (args.length == 0)
 			return cfg;
 
-		int port = Integer.parseInt(args[0]);
+	//	int port = Integer.parseInt(args[0]);
 
-		if (args.length > 0 && port != 0)
-			cfg.setPort(port);
+		/*if (args.length > 0 && port != 0)
+			//cfg.setPort(port);
 		if (args.length > 1)
-			cfg.setDbUrl(args[1]);
+			//cfg.setDbUrl(args[1]);
 		if (args.length > 2)
-			cfg.setDbUser(args[2]);
+		///cfg.setDbUser(args[2]);
 		if (args.length > 3)
-			cfg.setDbPassword(args[3]);
+			//cfg.setDbPassword(args[3]);*/
 
 		cfg.printConfig();
 		

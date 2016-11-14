@@ -31,5 +31,5 @@ public abstract class User extends Person {
 	public void setPass(String pass) {
 		this.pass = pass;
 	} 
-	
+	public User(){}; 
 }

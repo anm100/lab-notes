@@ -5,7 +5,7 @@
 	<classpathentry kind="lib" path="libraries/mysql-connector-java-3.1.11-bin.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/OCSF"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/GHealth"/>
-	<classpathentry kind="lib" path="libraries/ormlite-core-4.49-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="libraries/ormlite-jdbc-4.49-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="libraries/ormlite-core-4.49-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="libraries/ormlite-jdbc-4.49-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
