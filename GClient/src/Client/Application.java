@@ -1,6 +1,7 @@
 package Client;
 
 import models.User;
+import ui.main.ClientUI;
 import ui.main.SignInUI;
 
 public class Application {
@@ -22,7 +23,6 @@ public class Application {
 	public static void main(String[] args) {
 		Config.getConfig().readTextConfig();
 		connect();
-		
 		new SignInUI();
 	}
 }

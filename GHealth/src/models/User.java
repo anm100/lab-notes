@@ -6,7 +6,7 @@ import com.j256.ormlite.field.DatabaseField;
  * @author maisam marjieh 
  *
  */
-public abstract class User extends Person {
+public  class User extends Person {
 	/**
 	 * user password 
 	 */

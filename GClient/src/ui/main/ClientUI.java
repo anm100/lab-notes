@@ -239,7 +239,7 @@ public class ClientUI {
 		lblNewLabel.setBackground(Color.WHITE);
 		lblNewLabel.setBounds(10, 11, 284, 60);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel.setIcon(Resources.getIcon("logo.png"));
+		lblNewLabel.setIcon(Resources.getIcon("pic.png"));
 		frmGhealth.getContentPane().add(lblNewLabel);
 		lblNewLabel_1.setIcon(Resources.getIcon("user.png"));
 		frmGhealth.getContentPane().add(lblNewLabel_1);

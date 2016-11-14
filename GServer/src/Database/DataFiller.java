@@ -9,16 +9,23 @@ import java.util.List;
 import java.util.Random;
 
 import Utils.DateTime;
-import Views.Appointments;
 import models.*;
 
 public class DataFiller {
-	//this
-
+  DbHandler db ; 
+  
+ /* User u = new User();
+  u.set*/
+  
+  
+  
 	public DataFiller(DbHandler d) {
 		db = d;
 	}
+	
+	
 
-	DbHandler db;
+
 	
 }
+
