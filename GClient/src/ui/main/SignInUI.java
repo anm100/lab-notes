@@ -112,7 +112,7 @@ public class SignInUI {
 		
 		JLabel logo = new JLabel ("\u0639\u064A\u0627\u062F\u0629 \u0627\u0644\u062F\u0643\u062A\u0648\u0631 \u0647\u064A\u062B\u0645 \u0627\u0644\u0634\u064A\u062E \u062E\u0644\u064A\u0644\r\n");
 		logo.setVerticalAlignment(SwingConstants.BOTTOM);
-		logo.setBounds(198, 13, 437, 76);
+		logo.setBounds(214, 13, 421, 76);
 		logo.setForeground(new Color(0, 0, 0));
 		logo.setFont(new Font("Arial", Font.BOLD, 17));
 		logo.setBackground(Color.WHITE);

@@ -38,7 +38,7 @@ public class DbHandler {
 			connection = new JdbcConnectionSource(url, username, password);
 			initializeDao();
 			createTable(); 
-			fillDataBase();
+			//fillDataBase();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -55,10 +55,6 @@ public class DbHandler {
 	 * 
 	 * @throws Exception
 	 */
-	public void fillDataBase() throws Exception {
-		DataFiller df = new DataFiller(this);
-		
-	}
 
 	/**
 	 * initializes all the DAO for ORM usage
