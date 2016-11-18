@@ -2,12 +2,10 @@ package ui.utils;
 
 public abstract class Logo {
  private final static String logoUrl="pic.png";
- private final static String logoText = "⁄Ì«œ… «·œﬂ Ê— ÂÌÀ„ «·‘ÌŒ Œ·Ì·";
+ private final static String logoText = "Clinic Of Doctor Haytham Sheikh Khalil";
  private final static int logoSize = 20;
  private final static String logoFont= "Arial";
 
-  
- 
  
 public static int getLogosize() {
 	return logoSize;
