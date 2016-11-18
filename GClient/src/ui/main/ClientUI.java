@@ -128,7 +128,6 @@ public class ClientUI {
 		
 		  if (Application.user.getClass() == Secretary.class) {
 			btnCreateInvoice.setEnabled(true);
-			btnConformation.setEnabled(true);
 		} 
 
 	}
