@@ -24,6 +24,9 @@ public class DbHandler {
 	
 	public Dao<Secretary, String> secretaries;
 	public Dao<User, String> users;
+	public Dao<Lab, Integer> labs; 
+	public Dao<Labratorian, String> labratorians; 
+
 
 	
 	/**
@@ -47,6 +50,9 @@ public class DbHandler {
 	private void createTable() throws SQLException {
 		// TODO Auto-generated method stub
 		//TableUtils.createTable(connection, User.class);
+		//TableUtils.createTable(connection, Lab.class);
+		//TableUtils.createTable(connection, Labratorian.class);
+
 		
 	}
 
@@ -65,6 +71,8 @@ public class DbHandler {
 		
 		secretaries = DaoManager.createDao(connection, Secretary.class);
 		users = DaoManager.createDao(connection, User.class);
+		labs= DaoManager.createDao(connection, Lab.class);
+		labratorians= DaoManager.createDao(connection, Labratorian.class);
 
 	}
 

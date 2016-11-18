@@ -20,6 +20,9 @@ import ui.utils.UITests;
 
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 
+import com.toedter.calendar.JDateChooser;
+import com.toedter.calendar.JTextFieldDateEditor;
+
 import java.awt.Component;
 
 import javax.swing.JPasswordField;
@@ -34,6 +37,12 @@ import javax.swing.text.IconView;
 
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import javax.swing.JEditorPane;
 import javax.swing.JScrollBar;
 import javax.swing.JTextPane;
@@ -50,6 +59,9 @@ public class AddNote {
 
 	private JFrame AddNote;
 	private int attempts = 0;
+	private JDateChooser chooser= null;
+
+	
 
 	JButton btnConnected;
 
@@ -72,6 +84,31 @@ public class AddNote {
 
 			}
 		});
+JTextField textField = new JTextField(15);
+
+chooser = new JDateChooser();
+
+		
+		chooser.enableInputMethods(false);
+		chooser.setBackground(Color.GRAY);
+		chooser.setLocale(Locale.US);
+		chooser.setBounds(214, 116, 302, 26);
+		chooser.setVisible(true);
+		chooser.addPropertyChangeListener("date", new PropertyChangeListener() {
+			@Override
+			public void propertyChange(PropertyChangeEvent evt) {
+				JDateChooser chooser = (JDateChooser) evt.getSource();
+				SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+				textField.setText(formatter.format(chooser.getDate()));
+			}
+		});
+		JTextFieldDateEditor editor = (JTextFieldDateEditor) chooser.getDateEditor();
+		editor.setEditable(false);
+		chooser.setDate(new Date());
+		
+		
+	
+		AddNote.getContentPane().add(chooser);
 		AddNote.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 		AddNote.setTitle("Sign In");
 		AddNote.setResizable(false);
