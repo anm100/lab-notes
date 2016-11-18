@@ -16,6 +16,7 @@ import Client.Application;
 import Client.Resources;
 import Controllers.UsersController;
 import models.User;
+import ui.utils.Logo;
 import ui.utils.UITests;
 
 import org.eclipse.wb.swing.FocusTraversalOnArray;
@@ -35,13 +36,6 @@ import javax.swing.text.IconView;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
-/**
- * Sign in form, allows user to sign in to the system by giving a Social id and
- * password
- * 
- * @author aj_pa
- *
- */
 public class SignInUI {
 
 	private JFrame SignInUI;
@@ -110,13 +104,13 @@ public class SignInUI {
 		btnConnected.setBounds(0, 350, 668, 35);
 		SignInUI.getContentPane().add(btnConnected);
 		
-		JLabel logo = new JLabel ("\u0639\u064A\u0627\u062F\u0629 \u0627\u0644\u062F\u0643\u062A\u0648\u0631 \u0647\u064A\u062B\u0645 \u0627\u0644\u0634\u064A\u062E \u062E\u0644\u064A\u0644\r\n");
+		JLabel logo = new JLabel (Logo.getLogoText());
 		logo.setVerticalAlignment(SwingConstants.BOTTOM);
-		logo.setBounds(214, 13, 421, 76);
+		logo.setBounds(166, 11, 306, 76);
 		logo.setForeground(new Color(0, 0, 0));
-		logo.setFont(new Font("Arial", Font.BOLD, 17));
+		logo.setFont(new Font(Logo.getLogofont(), Font.BOLD, Logo.getLogosize()));
 		logo.setBackground(Color.WHITE);
-		logo.setIcon(Resources.getIcon("pic.png"));
+		logo.setIcon(Resources.getIcon(Logo.getLogoUrl()));
 		SignInUI.getContentPane().add(logo);
 
 		JLabel lblNewLabel = new JLabel("ID:");
