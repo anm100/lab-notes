@@ -38,11 +38,7 @@ import javax.swing.JTextPane;
 
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JTextFieldDateEditor;
-/**
- * public class ClientUI ,the menu window of Ghealth 
- * @author Bolous Abo Jaber 
- *
- */
+
 public class AddLab {
 
 	private JFrame addLab;
@@ -113,7 +109,7 @@ public class AddLab {
 				chooserStart.enableInputMethods(false);
 				chooserStart.setBackground(Color.GRAY);
 				chooserStart.setLocale(Locale.US);
-				chooserStart.setBounds(232, 253, 200, 26);
+				chooserStart.setBounds(232, 253, 200, 27);
 				chooserStart.setVisible(true);
 				chooserStart.addPropertyChangeListener("date", new PropertyChangeListener() {
 					@Override
@@ -139,7 +135,7 @@ public class AddLab {
 				chooserEnd.enableInputMethods(false);
 				chooserEnd.setBackground(Color.GRAY);
 				chooserEnd.setLocale(Locale.US);
-				chooserEnd.setBounds(232, 290, 202, 26);
+				chooserEnd.setBounds(232, 290, 200, 27);
 				chooserEnd.setVisible(true);
 				chooserEnd.addPropertyChangeListener("date", new PropertyChangeListener() {
 					@Override

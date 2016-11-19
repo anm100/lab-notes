@@ -1,4 +1,4 @@
-package ui.main;
+/*package ui.main;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -39,13 +39,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-/**
- * public class ExamEditor , shows examination details and insert test result In
- * addition , labratory can insert photo if test need
- * 
- * @author Bolous Abo Jaber
- *
- */
+
+// * public class ExamEditor , shows examination details and insert test result In
+// * addition , labratory can insert photo if test need
+
 public class ExamEditor {
 
 	private JFrame labratoryUI;
@@ -64,9 +61,9 @@ public class ExamEditor {
 		labratoryUI.setVisible(true);
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+
+	 // * Initialize the contents of the frame.
+
 	private void initialize() {
 		Labratorian labratorian = (Labratorian) Application.user;
 		labratoryUI = new JFrame();
@@ -225,4 +222,4 @@ public class ExamEditor {
 				txtResult.setEditable(isEditable);
 
 	}
-}
+}*/
