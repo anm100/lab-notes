@@ -46,5 +46,10 @@ namespace WpfApplication1
             n1.Show();
             this.Hide();
         }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
