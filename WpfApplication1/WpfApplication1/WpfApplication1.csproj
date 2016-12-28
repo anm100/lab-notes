@@ -56,10 +56,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="InsertTechnicalSupport.xaml.cs">
+      <DependentUpon>InsertTechnicalSupport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowNotes.xaml.cs">
       <DependentUpon>ShowNotes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ShowTechnicalSupport.xaml.cs">
+      <DependentUpon>ShowTechnicalSupport.xaml</DependentUpon>
+    </Compile>
     <Page Include="InsertNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsertTechnicalSupport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -79,6 +89,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ShowNotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowTechnicalSupport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

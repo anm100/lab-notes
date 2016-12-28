@@ -17,7 +17,8 @@
                                        IsReadOnly="False"/>
                 </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="button" Content="שמירת שינויים" HorizontalAlignment="Left" Margin="93,248,0,0" VerticalAlignment="Top" Width="110" Click="button_Click"/>
+        <Button x:Name="button" Content="שמירת שינויים" HorizontalAlignment="Left" Margin="159,248,0,0" VerticalAlignment="Top" Width="110" Click="button_Click"/>
+        <Button x:Name="button1" Content="חזרה לסף ראשי" HorizontalAlignment="Left" Margin="13,248,0,0" VerticalAlignment="Top" Width="109" Click="button1_Click"/>
 
     </Grid>
 </Window>

@@ -51,5 +51,19 @@ namespace WpfApplication1
         {
 
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            InsertTechnicalSupport win = new InsertTechnicalSupport();
+            win.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            ShowTechnicalSupport win = new ShowTechnicalSupport();
+            win.Show();
+            this.Hide();
+        }
     }
 }

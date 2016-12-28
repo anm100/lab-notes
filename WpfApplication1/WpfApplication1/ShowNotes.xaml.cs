@@ -53,5 +53,11 @@ namespace WpfApplication1
             scb = new SqlCommandBuilder(adp);
             adp.Update(ds.Tables[0]);
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Show();
+            this.Close();
+        }
     }
 }

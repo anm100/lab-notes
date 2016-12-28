@@ -34,3 +34,7 @@ C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\De
 C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.g.resources
 C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
 C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
+C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\InsertTechnicalSupport.g.cs
+C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\InsertTechnicalSupport.baml
+C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\ShowTechnicalSupport.g.cs
+C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\ShowTechnicalSupport.baml

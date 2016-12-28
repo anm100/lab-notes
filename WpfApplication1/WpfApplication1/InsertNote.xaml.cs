@@ -31,15 +31,10 @@ namespace WpfApplication1
             string details=textBox.Text;
             string dt = datetime.SelectedDate.Value.ToString("MM/dd/yyyy");
             insertNote(details, dt);
-            if (MessageBox.Show("חזרה לדף ראשי?", "שאלה", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            if (MessageBox.Show("!ההוספה התבצעה בהצלחה", "שאלה", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
             {
-                MainWindow win = new MainWindow();
-                win.Show();
+                Application.Current.MainWindow.Show();
                 this.Close();
-            }
-            else
-            {
-                //do yes stuff
             }
 
         }
@@ -64,8 +59,7 @@ namespace WpfApplication1
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow win = new MainWindow();
-            win.Show();
+            Application.Current.MainWindow.Show();
             this.Close();
         }
     }
