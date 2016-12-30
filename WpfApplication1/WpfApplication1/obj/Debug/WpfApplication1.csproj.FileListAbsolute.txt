@@ -38,3 +38,7 @@ C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\De
 C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\InsertTechnicalSupport.baml
 C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\ShowTechnicalSupport.g.cs
 C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\ShowTechnicalSupport.baml
+C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\ShowLaboratory.g.cs
+C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\ShowLaboratory.baml
+C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\INSERTLABORATRY.g.cs
+C:\Users\win 7\Documents\GitHub\lab-notes\WpfApplication1\WpfApplication1\obj\Debug\INSERTLABORATRY.baml

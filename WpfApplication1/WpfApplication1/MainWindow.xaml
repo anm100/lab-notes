@@ -12,7 +12,7 @@
         <Button x:Name="button2" Content="טכנאי" HorizontalAlignment="Left" Margin="337,162,0,0" VerticalAlignment="Top" Width="97" Height="35" Click="button2_Click"/>
         <Button x:Name="button3" Content="הצגת טכנאי" HorizontalAlignment="Left" Margin="172,165,0,0" VerticalAlignment="Top" Width="134" Height="29" Click="button3_Click"/>
         <Button x:Name="button4" Content="הוספת מעבדה" HorizontalAlignment="Left" Margin="20,102,0,0" VerticalAlignment="Top" Width="99" Click="button4_Click"/>
-        <Button x:Name="button5" Content="הצגת מעבדות" HorizontalAlignment="Left" Margin="20,162,0,0" VerticalAlignment="Top" Width="99" Height="32"/>
+        <Button x:Name="button5" Content="הצגת מעבדות" HorizontalAlignment="Left" Margin="20,162,0,0" VerticalAlignment="Top" Width="99" Height="32" Click="button5_Click"/>
 
     </Grid>
 </Window>

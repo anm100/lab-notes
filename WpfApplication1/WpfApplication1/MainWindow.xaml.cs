@@ -49,7 +49,9 @@ namespace WpfApplication1
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-
+            INSERTLABORATRY win = new INSERTLABORATRY();
+            win.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
@@ -62,6 +64,13 @@ namespace WpfApplication1
         private void button3_Click(object sender, RoutedEventArgs e)
         {
             ShowTechnicalSupport win = new ShowTechnicalSupport();
+            win.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            ShowLaboratory win = new ShowLaboratory();
             win.Show();
             this.Hide();
         }
