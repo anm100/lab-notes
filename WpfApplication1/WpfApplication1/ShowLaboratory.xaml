@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ShowLaboratory" Height="300" Width="300" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dataGrid" CanUserDeleteRows="True"  CanUserAddRows="False" HorizontalAlignment="Left" AutoGenerateColumns="true"  ItemsSource="{Binding}" Margin="3,6,0,0" VerticalAlignment="Top" Width="287" Height="113"/>
+        <DataGrid x:Name="dataGrid" CanUserDeleteRows="True" PreviewKeyDown="dataGrid_PreviewKeyDown"   CanUserAddRows="False" HorizontalAlignment="Left" AutoGenerateColumns="true"  ItemsSource="{Binding}" Margin="3,6,0,0" VerticalAlignment="Top" Width="287" Height="113"/>
         <Button x:Name="button" HorizontalAlignment="Left" Margin="152,144,0,0" VerticalAlignment="Top" Width="75">
             <Button x:Name="button1" Content="שמירת שינויים" Width="75" Click="button_Click"/>
         </Button>

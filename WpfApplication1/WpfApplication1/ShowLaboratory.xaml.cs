@@ -51,6 +51,17 @@ namespace WpfApplication1
             this.Close();
         }
 
-       
+        private void dataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Delete)
+            {
+               
+                var dataGrid = (DataGrid)sender;
+                foreach (DataRowView row in dataGrid.SelectedItems)
+                {
+                    string s=row["NAME"].ToString();
+                 }
+            }
+        }
     }
 }
