@@ -29,8 +29,6 @@ namespace WpfApplication1
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2)- (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-            this.Width = screenWidth / 2;
-            this.Height = (screenHeight / 2);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -73,6 +71,11 @@ namespace WpfApplication1
             ShowLaboratory win = new ShowLaboratory();
             win.Show();
             this.Hide();
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

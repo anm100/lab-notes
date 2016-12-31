@@ -24,17 +24,35 @@ namespace WpfApplication1
         public InsertTechnicalSupport()
         {
             InitializeComponent();
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
+            this.Width = screenWidth / 2;
+            this.Height = (screenHeight / 2);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string name = this.textBox.Text;
-            string address = this.textBox1.Text;
-            insertTECHNICAL_SUPPORT(name, address);
-            if (MessageBox.Show("!ההוספה התבצעה בהצלחה", "שאלה", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+            if (textBox.Text == "" || textBox1.Text == "")
             {
-                Application.Current.MainWindow.Show();
-                this.Close();
+                if (MessageBox.Show("!נא למלא כל השדות", "אזהרה", MessageBoxButton.OK, MessageBoxImage.Warning) == MessageBoxResult.OK)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                    string name = this.textBox.Text;
+                    string address = this.textBox1.Text;
+                    insertTECHNICAL_SUPPORT(name, address);
+                    if (MessageBox.Show("!ההוספה התבצעה בהצלחה", "שאלה", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+                    {
+                        Application.Current.MainWindow.Show();
+                        this.Close();
+                    }
             }
         }
 
@@ -60,6 +78,11 @@ namespace WpfApplication1
         {
             Application.Current.MainWindow.Show();
             this.Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.MainWindow.Show();
         }
     }
 }

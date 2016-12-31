@@ -34,9 +34,12 @@ namespace WpfApplication1
             double windowHeight = this.Height;
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
-            this.Width = screenWidth / 2;
-            this.Height = (screenHeight / 2);
-            dataGrid.Width = this.Width;
+          
+ }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.MainWindow.Show();
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -50,8 +53,21 @@ namespace WpfApplication1
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            try { 
             scb = new SqlCommandBuilder(adp);
             adp.Update(ds.Tables[0]);
+            if (MessageBox.Show("!המחיקה התבצעה בהצלחה", "שאלה", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+            {
+                return;
+            }
+            }catch(Exception ex)
+            {
+                if (MessageBox.Show("!המחיקה לא התבצעה ", "שאלה", MessageBoxButton.OK, MessageBoxImage.Error) == MessageBoxResult.OK)
+                {
+                    return;
+                }
+
+            }
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

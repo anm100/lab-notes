@@ -5,13 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="ShowLaboratory" Height="300" Width="300" Loaded="Window_Loaded">
+        Title="הצגת מעבדות" Height="350" Width="600" Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid>
-        <DataGrid x:Name="dataGrid" CanUserDeleteRows="True" PreviewKeyDown="dataGrid_PreviewKeyDown"   CanUserAddRows="False" HorizontalAlignment="Left" AutoGenerateColumns="true"  ItemsSource="{Binding}" Margin="3,6,0,0" VerticalAlignment="Top" Width="287" Height="113"/>
-        <Button x:Name="button" HorizontalAlignment="Left" Margin="152,144,0,0" VerticalAlignment="Top" Width="75">
-            <Button x:Name="button1" Content="שמירת שינויים" Width="75" Click="button_Click"/>
-        </Button>
-        <Button x:Name="button2" Content="חזרה לדף קודם" HorizontalAlignment="Left" Margin="32,141,0,0" VerticalAlignment="Top" Width="97" Click="button1_Click"/>
+        <DataGrid x:Name="dataGrid" CanUserAddRows="false"  FlowDirection="RightToLeft" PreviewKeyDown="dataGrid_PreviewKeyDown" HorizontalAlignment="Left" AutoGenerateColumns="False"  ItemsSource="{Binding}" Margin="10,19,-8.4,0" VerticalAlignment="Top" ColumnWidth="*" Height="200">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="שם טכנאי" Width="*"  
+                                       Binding="{Binding NAME}" 
+                                       IsReadOnly="True"/>
+                <DataGridTextColumn Header="כתובת הטכנאי" Width="*"  
+                                       Binding="{Binding ADDRESS}" 
+                                       IsReadOnly="True"/>
+                <DataGridTextColumn Header="שם המטופל" Width="*"  
+                                       Binding="{Binding Patient_Name}" 
+                                       IsReadOnly="True"/>
+                <DataGridTextColumn Header="פלפון של המטופל" Width="*"  
+                                       Binding="{Binding Patient_Phone}" 
+                                       IsReadOnly="True"/>
+                <DataGridTextColumn Header="מתאריך" Width="*"  
+                                       Binding="{Binding IN_TIME, StringFormat=\{0:dd/MM/yyy\}}" 
+                                       IsReadOnly="True"/>
+                <DataGridTextColumn Header="עד תאריך" Width="*"  
+                                       Binding="{Binding OUT_TIME ,StringFormat=\{0:dd/MM/yyy\}}" 
+                                       IsReadOnly="True"/>
+                <DataGridTextColumn Header="הערות" Width="*"  
+                                       Binding="{Binding DETAILS}" 
+                                       IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button" HorizontalAlignment="Left" Content="שמירה"   Click="button_Click" Margin="389,264,0,0" VerticalAlignment="Top" Width="84" Height="27"></Button>
+        <Button x:Name="button2" Content="חזרה" HorizontalAlignment="Left" Margin="136,264,0,0" VerticalAlignment="Top" Width="97" Click="button1_Click" Height="27"/>
 
     </Grid>
 </Window>

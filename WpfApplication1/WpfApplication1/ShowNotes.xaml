@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="ShowNotes" Height="300" Width="300"  Loaded="Window_Loaded">
+        Title="הצגת הערות" Height="350" Width="600"  Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid >
-        <DataGrid x:Name="dataGrid"  AutoGenerateColumns="False" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="0,18,0,0" VerticalAlignment="Top" Width="284" Height="225">
+        <DataGrid x:Name="dataGrid" FlowDirection="RightToLeft" CanUserAddRows="false" AutoGenerateColumns="False" ColumnWidth="*" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="0,18,0,0" VerticalAlignment="Top" Height="200">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="DATE" Width="SizeToCells"  
-                                       Binding="{Binding DATE, StringFormat=\{0:MM/dd/yyy\}}" 
-                                       IsReadOnly="False"/>
-                <DataGridTextColumn Header="DETAILS" Width="SizeToCells"  
+                <DataGridTextColumn Header="תאריך" Width="*"  
+                                       Binding="{Binding DATE, StringFormat=\{0:dd/MM/yyy\}}" 
+                                       IsReadOnly="True"/>
+                <DataGridTextColumn Header="הערות" Width="*"  
                                        Binding="{Binding DETAILS}" 
-                                       IsReadOnly="False"/>
+                                       IsReadOnly="True"/>
                 </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="button" Content="שמירת שינויים" HorizontalAlignment="Left" Margin="159,248,0,0" VerticalAlignment="Top" Width="110" Click="button_Click"/>
-        <Button x:Name="button1" Content="חזרה לסף ראשי" HorizontalAlignment="Left" Margin="13,248,0,0" VerticalAlignment="Top" Width="109" Click="button1_Click"/>
+        <Button x:Name="button" Content="שמירה" HorizontalAlignment="Left" Margin="322,266,0,0" VerticalAlignment="Top" Width="110" Click="button_Click" Height="30"/>
+        <Button x:Name="button1" Content="חזרה " HorizontalAlignment="Left" Margin="129,266,0,0" VerticalAlignment="Top" Width="109" Click="button1_Click" Height="30"/>
 
     </Grid>
 </Window>

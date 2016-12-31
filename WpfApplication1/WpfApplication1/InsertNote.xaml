@@ -5,31 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="InsertNote">
-    <Grid>
+        Title="הוספת הערה" Height="350" Width="600" Closing="Window_Closing">
+    <Grid Margin="0,0,-6.4,-0.2">
         <Grid.RowDefinitions>
-            <RowDefinition Height="102*"/>
-            <RowDefinition Height="169*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="62*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="52" Margin="152,16.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
-        <Label x:Name="label" Content="Details" HorizontalAlignment="Left" Margin="29,16.4,0,0" VerticalAlignment="Top" Width="85" Grid.Row="1"/>
-        <Button x:Name="button" Content="שמירה" HorizontalAlignment="Left" Margin="124,104.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <DatePicker x:Name="datetime" HorizontalAlignment="Left"  Margin="166,125,0,0" VerticalAlignment="Top" SelectedDateFormat="Short">
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="68" Margin="169,26.8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Grid.Row="1" FlowDirection="RightToLeft"/>
+        <Label x:Name="label" Content="הערות" HorizontalAlignment="Left" Margin="336,43.8,0,0" VerticalAlignment="Top" Width="85" Grid.Row="1" Height="31" FlowDirection="RightToLeft"/>
+        <Button x:Name="button" Content="הוסף" HorizontalAlignment="Left" Margin="346,136.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button_Click" Height="27"/>
+        <DatePicker x:Name="datetime" HorizontalAlignment="Left"  Margin="169,98,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" Width="130" Height="26">
             <DatePicker.Resources>
                 <Style TargetType="{x:Type DatePickerTextBox}">
                     <Setter Property="Control.Template">
                         <Setter.Value>
                             <ControlTemplate>
                                 <TextBox x:Name="PART_TextBox" 
-                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat={}{0:MM/dd/yyyy}}" />
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat={}{0:dd/MM/yyyy}}" />
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                 </Style>
             </DatePicker.Resources>
         </DatePicker>
-        <Label x:Name="label1" Content="date" HorizontalAlignment="Left" Margin="29,123,0,0" VerticalAlignment="Top" Width="96"/>
-        <Button x:Name="button1" HorizontalAlignment="Left" Margin="241,100.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="27" Content="חזרה" Click="button1_Click"/>
+        <Button x:Name="button1" HorizontalAlignment="Left" Margin="169,136.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="27" Content="חזרה" Click="button1_Click"/>
+        <Label x:Name="label1" FlowDirection="RightToLeft" Content="בתאריך" HorizontalAlignment="Left" Margin="336,100,0,0" VerticalAlignment="Top" Width="81"/>
 
     </Grid>
 </Window>

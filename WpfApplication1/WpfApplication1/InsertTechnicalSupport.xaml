@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="InsertTechnicalSupport" Height="300" Width="300">
+        Title="הוספת טכנאי" Height="350" Width="525" Closing="Window_Closing">
     <Grid>
-        <Label x:Name="label" Content="שם" HorizontalAlignment="Left" Margin="154,38,0,0" VerticalAlignment="Top" Width="122"/>
-        <Label x:Name="label1" Content="כתובת" HorizontalAlignment="Left" Margin="154,93,0,0" VerticalAlignment="Top" Width="122"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="29,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="29,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="הוסף טכנאי" HorizontalAlignment="Left" Margin="75,166,0,0" VerticalAlignment="Top" Width="113" Click="button_Click"/>
-        <Button x:Name="button1" Content="חזרה לדף ראשי" HorizontalAlignment="Left" Margin="75,210,0,0" VerticalAlignment="Top" Width="113" Click="button1_Click"/>
+        <Label x:Name="label" Content="שם" HorizontalAlignment="Left" Margin="306,41,0,0" VerticalAlignment="Top" Width="122" FlowDirection="RightToLeft"/>
+        <Label x:Name="label1" Content="כתובת" HorizontalAlignment="Left" Margin="306,126,0,0" VerticalAlignment="Top" Width="122" FlowDirection="RightToLeft"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="114,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" FlowDirection="RightToLeft"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="81" Margin="114,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" RenderTransformOrigin="0.5,0.5" FlowDirection="RightToLeft">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.655"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.389"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="button" Content="הוסף" HorizontalAlignment="Left" Margin="306,239,0,0" VerticalAlignment="Top" Width="113" Click="button_Click" Height="30"/>
+        <Button x:Name="button1" Content="חזרה " HorizontalAlignment="Left" Margin="87,239,0,0" VerticalAlignment="Top" Width="113" Click="button1_Click" Height="30"/>
 
     </Grid>
 </Window>

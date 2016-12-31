@@ -24,17 +24,32 @@ namespace WpfApplication1
         public InsertNote()
         {
             InitializeComponent();
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
+          
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string details=textBox.Text;
-            string dt = datetime.SelectedDate.Value.ToString("MM/dd/yyyy");
-            insertNote(details, dt);
-            if (MessageBox.Show("!ההוספה התבצעה בהצלחה", "שאלה", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+           if(textBox.Text=="" || datetime.SelectedDate == null)
             {
-                Application.Current.MainWindow.Show();
-                this.Close();
+                if (MessageBox.Show("!נא למלא כל השדות", "אזהרה", MessageBoxButton.OK, MessageBoxImage.Warning) == MessageBoxResult.OK)
+                {
+                    return;
+                }
+            }
+            else { 
+                string details=textBox.Text;
+                string dt = datetime.SelectedDate.Value.ToString("MM/dd/yyyy");
+                insertNote(details, dt);
+                if (MessageBox.Show("!ההוספה התבצעה בהצלחה", "שאלה", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+                {
+                    this.Close();
+                }
             }
 
         }
@@ -59,8 +74,15 @@ namespace WpfApplication1
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Show();
             this.Close();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.MainWindow.Show();
+            
+        }
+
+        
     }
 }
